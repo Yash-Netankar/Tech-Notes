@@ -1,0 +1,77 @@
+⭕Elastic Search
+
+Inside a ES cluster we have nodes for each we specify the storage size.
+Inside cluster we have data nodes as well as master nodes.
+Inside master nodes we specify only instance size and no of nodes.
+Master nodes can be split along multiple AZs.
+
+We can use IAM based role authorization in ES.
+We can also set up basic login and password authentication.
+There is public access and VPC based access.
+We're given a endpoint and we make http calls to manage the data.
+
+
+
+⭕ES Structure:
+ES Domain  => Cluster
+Indexes    => Databases
+Types      => Tables
+Records    => Rows
+
+Record is a schemaless JSON document. Record must have an id.
+
+
+
+⭕CRUD:
+
+• Insert single record:
+Method       = POST
+URL          = endpoint/index/_doc/id
+Request Body = {JSON doc}
+
+
+• Insert multiple record:
+Method       = POST
+URL          = endpoint/_bulk
+Request Body = 
+{"create" : {"_index": myDB, "_type" : myTable, "_id" : 1}}
+{"name": "Yash"}
+{"create" : {"_index": myDB2, "_type" : myTable2, "_id" : 2}}
+{"name": "Anurag"}
+(new line in the end)
+
+
+• Search data:
+Method = GET
+URL    = endpoint/index/type/id
+
+Method       = GET
+URL          = endpoint/index/_search
+Request Body = {"query" : {"match" : {"name" : "Yash" }}}
+Aggregations, filter and mixed queries etc are also possible
+
+
+• Update data:
+Method = POST
+URL    = endpoint/index/_doc/id
+Body   = {"Name" : "Yash Netankar"}
+       = {"doc" : {"Name" : "Yash Netankar"}, "doc_as_upsert" : true}
+
+
+• Delete data:
+Method = DELETE
+URL    = endpoint/index/_doc/id
+
+Method = POST
+URL    = endpoint/index/type/id/delete_by_query
+Body   = {"query" : {"match" : {"name" : "Yash Netankar"}}}
+
+
+
+
+
+
+
+
+
+

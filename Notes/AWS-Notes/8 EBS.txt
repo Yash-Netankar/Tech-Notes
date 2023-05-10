@@ -1,0 +1,89 @@
+⭕EBS
+• It is network attached storage.
+• Stopping or rebooting EC2 will not delete data.
+• One EC2 instance can be connected to only one EBS.
+• Both EC2 & EBS should be in same AZ.
+
+
+
+⭕Types of EBS
+🟢SSD Backed
+° General purpose SSD:
+• General purpose SSD is default here.
+• Backed by SSD.
+• Optimal price and good performance.
+• Bootable and has low latency.
+• has upto 10000 IOPS
+• volume 1Gb-16Gb
+
+° Provisioned IOPS SSD:
+• Provisioned IOPS SSD here has huge IOPS upto 32000 - 64000.
+• exteremely low latency.
+• volume size 4Gb-16Gb.
+
+🟢HDD Backed
+• Non-bootable
+
+° Throughtput optimised st1:
+• backed by HDD
+• ideal for frequent access
+• performance is measured in mbps
+• 500 IOPS per volume
+• Volume size 500Gb - 16Tb
+
+° Cold HDD sc1:
+• backed by HDD and ideal for infrequent access
+• low cost
+• 250 IOPS per volume
+• Volume size 500Gb - 16Tb
+
+🟢Magnetic
+• Bootable and has very low cost
+• ideal when data accessing is very infrequent.
+• Volume size 1Gb-1Tb
+• 40-200 IOPS per volume
+
+
+
+⭕Snapshots
+• Snapshots are point-in-time and these actually are the copies of data EBS in volume
+• It works in incremental snapshot which means next time you take a snapshot it'll not make copies of the data from the beginning but from where you left.
+• Per account EBS 5k volumes and 10k snapshots.
+• Snapshots are stored in S3
+• Snapshots are region specific but EBS is AZ specific
+• We can create EBS volume in any AZ in a region with snapshots.
+• To migrate EBS from one AZ to another snapshot can be a way.
+• We can't take snapshots on EBS non-root volume while it's running
+• To take complete snapshot of non-root volume stop or unmount EBS
+• Root volumes snapshots cannot be taken in running state
+
+
+⭕EBS Encryption
+• Available in all EBS volume types
+• Snapshots will also be encryted if volume is encrypted & vice versa
+• Data in transit between EC2 & EBS is also encrypted because data is encrypted in EC2 and then transferred
+• We can create encrypted snapshot from unencrypted volume and then re-create a EBS which will be encrypted and then can attach it to the other EC2.
+• We can also create a new EBS and copy the encrypted data from earlier EBS in encrypted way and then attach it to the EC2, but in this case both EBS should be attached to the same EC2
+
+• For encryption we need a CMS key by AWS KMS
+• We cannot change the encryption key of existing encrypting volume or snap directly
+• To change the key, take snapshot which will be encrypted with key1 then take a copy and there it'll ask for new encryption key
+• We can share unencrypted snaps by making it public but not encrypted one as we have to change it's default key and adding accounts of people
+• *F%3si$QiK!v5CCJjOeg5W5x=1TRd@CH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

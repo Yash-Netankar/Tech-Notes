@@ -1,0 +1,8 @@
+⭕Storage
+There are 5 types of storage: S3, EFS, EBS, Glacier (S3 Glacier), Snowball.
+
+🟢Block vs Object storage
+• Block storage divides the data into equal sized blocks and store it.
+• Metadata of blocks is not stored, only indexes do
+• Object storage stores the data as it is. Object can be file or data, metadata, global unique ID (identifier of object).
+

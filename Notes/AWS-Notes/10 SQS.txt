@@ -1,0 +1,41 @@
+⭕SQS
+• It is queue management tool where one task will be assigned in a queue and some AWS service might pick that up and complete it and after it's completion another service might get triggerred and would proceed the further execution.
+
+• SQS can be defined as a service where one service sends messages in a queue and another service receives those messages.
+
+• There is visibility timeout where while the task is being completed by some service it cannot be picked up by another service until the visibility time specified (eg: 30s).
+
+• If the task fails due to any error it goes back in queue and gets picked by the service again, to prevent this happening again and again we have dead letter queue that is reccommended to use only with standard queue not FIFO.
+
+• Standard queue has high and unlimited throughput.
+• FIFO has 300 transaction/sec, duplicacy not possible.
+
+• SHORT POLLING:
+Request is returned immediately even if queue is empty and does not wait for messages to appear in queue. To enable keep ReceiveMessageWaitTime 0.
+
+• LONG POLLING
+Reduce the no of empty responses as it waits there (at least till timeout) to check if message has appeared in the queue.
+
+• A queue has 4 days of default retention period and maximum of 14 days and minimum of 1 minute. Message will be deleted from queue after a retention period.
+
+• Visibility time has max of 12 hours. If service is taking more than visibility time then it can be extended. If message is picked then it is disappeared from queue for the visibility time specified and if completed successfully then permanent but if it fails then is visible again in the queue.
+
+• Receive Messasge Wait Time is the maximum wait time where serivce waits for the time specified for the message to appear in the queue if no message appears then it returns response. max time is 20sec
+
+• Dead letter queue is responsible for handing the message failures. Gives info about failed messages.
+
+• Message is flight has the messages that has not been completed or hasn't been deleted from the queue.
+
+• Message can be upto 256kb
+
+
+
+
+
+
+
+
+
+
+
+

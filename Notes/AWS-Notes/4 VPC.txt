@@ -1,0 +1,60 @@
+⭕VPC
+• It is simply a data-center inside AWS for one client. 
+• One region can have 5 VPC and each VPC can have 200 subnets. 
+• CIDR of VPC can't be changed once created.
+• Public VPCs are the ones who connected to the internet gateway & their route is defined in the routing table for internet. Instances in an Public VPCs should also have public or Elastic IP to connect to the VPC.
+• Private subnets can't be accessed through internet. We can have our own custom CIDR in private VPC between 10.0.0.0/16 to 10.0.0.0/24.
+• Creation if VPC is as follows: 
+Create VPC => Create Subnet => Create IG => define routing table
+• First 4 IPs and last 1 IP of CIDR is reserved. AWS do not support broadcast but still reserved last IP.
+
+
+⭕Router
+• It is connected to VPC & it connects resources in AZs and also connects the VPC to the Internet Gateway
+• 200 route tables per VPC, one route table can have 50 routes.
+• A Subnet can't be associated with multiple route table, but one multiple subnets can be associated with same route table.
+
+
+⭕Internet Gateway
+• IG is a virtual router
+
+
+⭕NAT Gateway
+• Enable instances in a private subnet to connect to the internet but prevent internet from connecting to the instances.
+• It is always attached to public subnet.
+• It is neccessary to specify Elastic IP and Public subnet for NAT.
+• Need to assign public IP address to private instance.
+• Terribly expensive.
+
+
+⭕Security Groups
+• It is a virtual firewall that is applied on subnet level as well as  on the individual instance.
+• Can make 5 SGs for one EC2.
+• Can only permit rules not deny.
+• If some port is allowed then traffic can come from internet as well as sent from the instance, i.e inbound rules are automatically copied for outbound rules.
+
+
+⭕NACL
+• Optional layer for additional security to the VPC which acts as firewall for contrlling traffic in and out of subnets.
+
+
+⭕VPC Peering
+• Two VPC can communicate with each other using private IPv4 address.
+• Transitive peering is not possible.
+
+
+⭕VPC Endpoint
+• It is virtual device & less expensive than NAT Gateway.
+
+
+
+
+
+
+
+
+
+
+
+
+

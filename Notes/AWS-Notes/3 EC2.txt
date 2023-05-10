@@ -1,0 +1,113 @@
+⭕Elastic Compute Cloud (EC2):
+• Provides scalable computing in cloud eliminating the need of the hardware.
+• Handles scaling up or down as per requirement.
+• Has 2 storage options EBS & instance store.
+• One region can have 20 EC2 instances, request amazon for more.
+
+
+
+⭕Types Of Instances:
+🟢General Purpose
+• Average configuration, has balance of computing
+• Used for variety of workloads
+• Has 3 series, A, M and T
+  ° A-instances are used for scale out workloads and well suited for           microservices, webserver, etc.
+  ° Some M-instances provides 2 to 96 CPUs & 8 to 384 GBs of RAM
+  ° T-instances are baseline level of CPU performances, low performance.
+• Has 2 to 8 CPUs and 0.5 to 32 GBs of RAM.
+
+🟢Compute Optimised
+• Has a server that can do multiple or batch processing.
+• Has only C series having types like C4, C5 and C5n.
+
+🟢Memory Optimized
+• Designed to work for huge data processing and manage huge database
+• Has 3 series, R, X and Z.
+• Instances in R series can have upto 768 Gbs of RAM, 96 CPUs.
+• X series have min 122 to 3904 GBs of RAM & upto 128 CPUs.
+• Z series have high frequency 4.0 ghz fastest as of now.
+
+🟢Storage Optimised
+• Has series of I, D and H.
+• Designed for high and seqential read and write to very large data sets on local storage. eg: songspk.com, youtube.com.
+• Has low latency & supports tens of thousands I/O operation per second
+• I series can be used for online transactions.
+
+🟢High Memory
+• It is for dedicated host so we have to purchase one minimum for 3 years. Installed directly on the hardware. No VM.
+• Designed to run large in-memory databases.
+• Has U series.
+• Has RAM 6, 9, 12TB
+
+
+
+⭕Purchasing Options:
+• There are purchasign options like On Demand, Dedicated Instance, Dedicated Host, Spot Instance, Schedule and Reserved Instance.
+• But there are only majorly 3 ways to pay i.e On Demand, Reserved and Spot instance
+
+
+⭕EC2 Access:
+• To access instances we need key and key pair name. We can download this private key only once.
+• Public key is saved by AWS to match to key pair name.
+• Even if the EC2 is stopped the EBS is attached i.e its storage will cost billing even after instance is terminated.
+• Instance can retain private IPV4, IPV6 and Elastic IP.
+• Public IP gets removed when instance is closed.
+
+
+⭕EBS vs Instace Storage
+• EBS is easily replicated with AZs
+• EBS volumes attached at launch are deleted when instance is terminated if deletion protection is disabled.
+• EBS volumes attached at running instance will not be deleted when EBS is detached from instance
+• EBS is network attach storage
+• Instance Store is directly attached to instance and is faster than EBS
+• Data is not lost when OS is rebooted, but it does on termination, drive failure.
+• Can't detach or attach another, not for valuable long term data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

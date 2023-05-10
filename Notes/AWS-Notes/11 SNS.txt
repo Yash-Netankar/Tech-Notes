@@ -1,0 +1,9 @@
+⭕SNS
+• It is push notification service while SQS is pull.
+• It is similar to AWS kinesis & AMQ, apache kafka, twilio, pusher, etc
+
+• TOPIC:
+It is logical access point and communication channel with unique name in AWS account.
+We can send messages through sms, email, email-json, http/s, sqs, lambda.
+By default only owner can publish to SNS topic but we can give permissions to other users with IAM or other way.
+

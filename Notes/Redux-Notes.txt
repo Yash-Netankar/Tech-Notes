@@ -1,0 +1,15 @@
+🟢 Intro
+• It is a container that stores all the data
+• Used to make effective communication between multiple components
+• Context is the alternative but we might need to create multiple contexts in big projects whereas redux can manage all in one store
+• Redux store contains all the data and this store is separated from the main project thus we can access this store's data from anywhere
+• Data flow is always unidirectional which means data will go from actions to reducers to store and then finally in components.
+• Actions Reducers Store & View are four main pillars of redux
+• Better to have only one store in one application.
+
+🟢 Actions
+• It receives data and later that data is sent to the reducers along with the type of the action.
+• Action type could be anything like increment, decrement, add to cart, remove from cart, etc
+
+🟢 Reducers
+• Reducers perform the operations on data we get from the actions.

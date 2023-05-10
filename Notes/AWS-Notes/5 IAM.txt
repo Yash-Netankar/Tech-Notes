@@ -1,0 +1,54 @@
+⭕IAM
+• It gives appropriate access and permissions to the proper people in the organisation.
+• 5000 per root account & 300 groups.
+• Limited to 1000 roles per account.
+• 10 policies can be attached to an IAM user/role.
+• IAM user can be member of 10 groups.
+
+
+
+⭕Terms of IAM
+
+🟢Principal
+• One who is performing some action, could be user or some resource.
+• Root user is the first principal.
+• Users, roles, federated users & application can be principals.
+
+🟢Request
+• Requests are made by principals to fulfill some tasks.
+
+🟢Authentication & Authorization
+• Principlas sending a request must be authenticated but in some cases like S3 there is execption.
+• IAM user, aws-cli will need access key and secret key.
+
+🟢Actions & Resources
+
+
+
+⭕IAM Identities
+
+🟢Users
+• Actual user or the application that requires access to the AWS resources.
+
+🟢IAM Groups
+• The permissions assigned to the group will automatically get assigned the users in the group.
+• A user can be member of 10 groups.
+• Not a principal in IAM, can't be nested and not truely an identity but collection of users.
+
+🟢IAM Role
+• It assigns polices and permissions and does not have any credentials
+• One role allowed for one user.
+• It is interchangeable.
+
+
+⭕IAM Cross Account access
+
+
+
+
+
+
+
+
+
+

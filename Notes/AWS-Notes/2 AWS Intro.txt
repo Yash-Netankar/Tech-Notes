@@ -1,0 +1,24 @@
+a. Saves cost emmensely & have to pay for what you use.
+b. Dynamically scalable.
+
+⭕Service Models:
+🟢IAAS
+Provides virtualization, server, storage, network & OS
+
+🟢PAAS
+Provides virtualization, server, storage, network, OS middleware & runtime.
+
+🟢SAAS
+Provides virtualization, server, storage, network, OS middleware, runtime, data & application.
+
+
+
+⭕Deployment Model of Cloud:
+🟢Public Cloud
+AWS, Azure, GCP etc are public cloud. Anyone can use it from anywhere. Though we can create VPC in platform like AWS.
+
+🟢Private Cloud
+Made by a company for their own personal use also called as enterprice cloud. Lot of headache & setups & configuration and management but is more secure.
+
+🟢Hybrid Cloud
+It is where resources from both cloud can be used. Azure is more flexible in this.

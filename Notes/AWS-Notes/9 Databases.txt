@@ -1,0 +1,53 @@
+Databases are built in EC2's that we can never access but can access the DB engine inside it and that is why databases in AWS always uses EBS.
+
+⭕ RDBMS
+Cannot *scale out* horizontally.
+
+🟢AWS Manages
+• Security and patching
+• Backup
+• Software updates for DB eengine.
+• If selected multiple AZ for a DB, AWS manages the replica of the primary DB in other DB. If primary DB is collapsed AWS will make the replica as primary.
+
+🟢AWS RDS Limits
+• 40 DB instances per account where 10 can be Oracle or MS-SQL under licence includes model,
+OR
+under own licence, all 40 can be any DB we want.
+
+🟢Multi-AZ in RDS
+• We cannot control where the replica of DB will be built
+• Multi-AZ triggers in these conditions: Primary DB failover, AZ failure, loss of network connectivity, EC2 or EBS of primary DB fails, primary DB settings changed, patching OS of primary DB, manual failover
+• In case of failure and replica becomes primary, then Cname of Db is automatically updated through which we can connect.
+• In case of OS patching, system updates, DB scaling, snapshots and backups etc, first do it in replica i.e standby database then connect app to the standby, then do the operations in primary database too.
+• If multi AZ then backup taken is from StandBy and backups are stored in S3
+
+
+
+⭕ No SQL
+Can scale horizontally.
+
+
+⭕ TYPES OF NO-SQL
+🟢Columnar Database:
+• Data is stored in columns first for example if we have thousand employee ids, name & salary, then all the thousand ids will be stored first then all names followed by salary, not like usual where id name and salary for first employee is stored and then second and next.
+Saves time while reading as it reads in column wise itself.
+
+🟢Key Value Database:
+• Good for session management and stores the latest query data in cache
+• Key is associated with only one value, one-to-one.
+• Can scale horizontally.
+
+🟢Graph Database:
+• Collection of nodes and edges, each node represents a connection or relationship between nodes. eg: Neo4J
+
+
+
+
+
+
+
+
+
+
+
+

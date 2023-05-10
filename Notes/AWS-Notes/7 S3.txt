@@ -1,0 +1,92 @@
+⭕S3
+It supports lifecycle methods, versioning of buckets that can't be disabled, static website hosting and ACL
+
+🟢Versioning
+• Gives deletion protection
+• Provides data retention and archeive
+• Versioning can't be disabled once enabled but suspended
+• Once enabled it will store the versions of all updated and other actions
+• Once object is deleted it can be still viewed, but will be marked as deleted. Delete the delete marker and oject will be available
+• We can use versioning with S3 lifecycle policies like delete the older data or move it to other storage service.
+• Objects existing before versioning will have NULL as object ID
+
+🟢Multipart Upload
+• While uploading the big data it'll divide the data into equal parts and then will upload as a whole. Will have to enable it manually.
+
+🟢Copying S3
+• We can copy an object upto 5GB with single atomic operation i.e without multipart if >5Gb then will copy with multipart uploading
+• Copying in another region will cost extra charges.
+
+🟢Cross region replication
+• For cross region replication versioning must be abled.
+• Data uploaded in source bucket will be available in destination where 
+this feature is enabled, but data uploaded in destination can't be seen in source bucket.
+
+🟢Lifecycle management
+• After a particular amount of time the data might not be that useful so we can move that data to much cheaper storage or even delete it after few days using lifecycle rules.
+
+
+⭕Types of S3
+🟢S3 Standard
+• Highly durable, has good performance and availability for frequently accessed data.
+• Support SSL, and less charge for accessing data but high cost for storage.
+
+🟢S3 Standard Infrequent access
+• Used for data to be accessed infrequently but whenever accessed it needs to be quick and fast.
+• Storage cost is cheaper than above one but charges are heavy for accessing.
+• SSL support
+
+🟢S3 Intelligent Tiering
+• Designed to optimise cost by moving data between two S3 types as per the data accessing frequency.
+• Object less than 128kb cannot be in IA type.
+• 
+
+🟢S3 Standard One Zone - IA
+• Data is stored in single AZ and used when data is accessed infrequently and rapidly whenver accessed.
+• Less availability than other S3 types 99.5% per year.
+• Good choice to store re-creatable data.
+
+🟢S3 Glacier
+• For data archeiving it is secure, durable and low cost storage.
+• Gives retreival options from minutes to hours
+• Support SSL & 10GB retrieval of data per month for free.
+
+🟢S3 Glacier Deep archeive
+• Cheapest storage and designed to store data for long term, 10yrs.
+• Retrieval time within 12 hours.
+• Low cost than glacier about 75% low.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

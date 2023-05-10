@@ -1,0 +1,66 @@
+🟢Physical Addressing:
+Includes MAC address.
+
+
+🟢Logical Addressing:
+Includes IP(Internet Protocol) addresses.
+
+
+------
+IPV4
+------
+•It is 32 bit logical address & has 4 octet and every octat can have    value between 0-255.
+•IP address = network id + host id.
+•IP address has 5 classes.
+	Class A = 1.0.0.0 - 126.0.0.0
+	Class B = 128.0.0.0 - 191.255.0.0
+	Class C = 192.0.0.0 - 223.255.255.0
+	Class D = 224 - 239
+	Class E = 240 - 255
+•D & E are not generally used, only used for multitask and research resp.
+127.0.0.0 is reserved for loopback address.
+•In class A, B, C first 1, 2, 3 octets are reserved for network(bit 1) and remaining for host(bit 0) respectively i.e in A=1, B=2, C=3.
+•Network Id is the value in reserved octet.
+eg: Class A = 123.87.56.10 netork id = 123.0.0.0
+Class B = 134.54.76.34 network id = 134.54.0.0
+
+
+------------
+Subnet Mask
+------------
+Class-A IP = 123.45.34.23
+here one octet is reserved for network and rest are for host and network bit is represented by 1 and host by 0 and each octet has 8 bit so it becomes,
+11111111 0 0 0
+which turns to be, 255.0.0.0 after decimal conversion
+Similiarly for Class-B
+145.56.87.23
+1111111 11111111 0 0
+255.255.0.0 => this is subnet mask.
+
+
+----------------------------------------------------------------------
+How many computers can be connected to IP & find Network, Broadcast ID
+----------------------------------------------------------------------
+150.10.20.30
+150.10.0.0 = Network ID (host octet 0)
+150.10.255.255 = Broadcast ID (host octet 255)
+No of usable IP's or max computers to be connected is equal to
+2 ^ total bits in all host reserved octet - 2 i.e in this case 
+2^16-2 = 65,534
+65,534 can be connected to 150.10.20.30
+
+
+🟢Private IP:
+Not reachable from the internet & is used only to communicate between the instances.
+
+
+🟢Public IP:
+Reachable from the internet and is used to communicate between instances and the internet but, it gets associated when instance is created and realeased when instance is closed or terminated.
+
+
+🟢Elastic IP:
+To retain the public ip we create elastic ip. One account can have only 5 EPs by default.
+
+
+🟢Subnets:
+A subnet is a range of IP addresses in your VPC. You can attach AWS resources, such as EC2 instances and RDS DB instances, to subnets. You can create subnets to group instances together according to your security and operational needs.
